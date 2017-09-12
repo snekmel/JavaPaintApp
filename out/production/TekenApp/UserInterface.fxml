@@ -2,10 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -48,9 +50,9 @@
             </Label>
          </children>
       </GridPane>
-      <TabPane prefHeight="145.0" prefWidth="349.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1">
+      <TabPane fx:id="DrawingTypeTabPane" prefHeight="145.0" prefWidth="349.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1">
         <tabs>
-          <Tab text="Oval">
+          <Tab fx:id="OvalTab" text="Oval">
                <content>
                   <GridPane>
                     <columnConstraints>
@@ -63,25 +65,67 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Spinner fx:id="OvalWidth" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" />
-                        <Spinner fx:id="OvalHeight" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Spinner fx:id="OvalWidth" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" />
+                        <Spinner fx:id="OvalHeight" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                         <Label prefHeight="17.0" prefWidth="42.0" text="Width" />
                         <Label prefHeight="17.0" prefWidth="44.0" text="Height" GridPane.rowIndex="1" />
+                        <Label text="Color" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="44.0" text="Weight" GridPane.columnIndex="1">
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="OvalColor" prefHeight="25.0" prefWidth="101.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Spinner fx:id="OvalWeight" editable="true" prefHeight="25.0" prefWidth="77.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
                      </children>
                   </GridPane>
                </content>
           </Tab>
-          <Tab text="Text">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="131.0" prefWidth="454.0" />
-            </content>
+          <Tab fx:id="TextTab" text="Text">
+               <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Spinner fx:id="PTWidth" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" />
+                        <Spinner fx:id="PTHeight" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="42.0" text="Width" />
+                        <Label prefHeight="17.0" prefWidth="44.0" text="Height" GridPane.rowIndex="1" />
+                        <Label text="Color" GridPane.columnIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="54.0" text="Content" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="PTColor" prefHeight="25.0" prefWidth="127.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                        <TextField fx:id="PTContent" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label text="Font" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="PTFont" prefHeight="25.0" prefWidth="96.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </content>
           </Tab>
-            <Tab text="Polygon">
+            <Tab fx:id="PolygonTab" text="Polygon">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab text="Line">
+            <Tab fx:id="LineTab" text="Image">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
@@ -91,7 +135,7 @@
             <Insets right="15.0" />
          </GridPane.margin>
       </TabPane>
-      <Canvas fx:id="drawingCanvas" height="459.0" onMouseClicked="#OnCanvasClick" width="929.0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+      <Canvas fx:id="drawingCanvas" height="459.0" width="929.0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
          <GridPane.margin>
             <Insets left="5.0" />
          </GridPane.margin>

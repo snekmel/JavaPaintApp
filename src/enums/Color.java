@@ -1,5 +1,5 @@
 package enums;
 
 public enum Color {
-    black,white,red,blue,green
+    BLACK,WHITE,RED,BLUE,GREEN
 }

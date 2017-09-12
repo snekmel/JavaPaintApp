@@ -16,9 +16,7 @@ public class JavaFxPaintable implements IPaintable {
     }
 
     public void Paint(Oval o) {
-
     graphics.fillOval(o.getAnchor().getX(), o.getAnchor().getY(), o.getWidth(), o.getHeight());
-
     }
 
     @Override

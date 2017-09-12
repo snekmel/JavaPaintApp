@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Polygon  extends DrawingItem{
 
     private ArrayList<Point> vertices;
+
     private double weight;
 
     public ArrayList<Point> getVertices() {
