@@ -8,6 +8,12 @@ public class Drawing {
 
     private ArrayList<DrawingItem> items;
 
+    public Drawing(String name) {
+        this.name = name;
+        this.items = new ArrayList<>();
+
+    }
+
     public String getName() {
         return name;
     }
@@ -20,14 +26,8 @@ public class Drawing {
         return items;
     }
 
-    public void AddDrawingItem(DrawingItem item){
+    public void AddDrawingItem(DrawingItem item) {
         this.items.add(item);
-    }
-
-    public Drawing(String name) {
-        this.name = name;
-        this.items = new ArrayList<>();
-
     }
 
     @Override

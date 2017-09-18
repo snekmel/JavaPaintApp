@@ -11,6 +11,15 @@ public class PaintedText extends DrawingItem {
     private double height;
 
 
+    public PaintedText(Color color, String content, String fontName, Point anchor, double width, double height) {
+        super(color);
+        this.content = content;
+        this.fontName = fontName;
+        this.anchor = anchor;
+        this.width = width;
+        this.height = height;
+    }
+
     public String getContent() {
         return content;
     }
@@ -53,16 +62,6 @@ public class PaintedText extends DrawingItem {
     public void setHeight(double height) {
         this.height = height;
     }
-
-    public PaintedText(Color color, String content, String fontName, Point anchor, double width, double height) {
-        super(color);
-        this.content = content;
-        this.fontName = fontName;
-        this.anchor = anchor;
-        this.width = width;
-        this.height = height;
-    }
-
 
     @Override
     public String toString() {

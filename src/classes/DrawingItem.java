@@ -9,6 +9,10 @@ public abstract class DrawingItem {
     private DrawingItem previousState;
 
 
+    public DrawingItem(Color color) {
+        this.color = color;
+    }
+
     public Color getColor() {
         return color;
     }
@@ -25,20 +29,16 @@ public abstract class DrawingItem {
         this.previousState = previousState;
     }
 
-    public Point getAnchor(){
+    public Point getAnchor() {
         return null;
     }
 
-    public  double getWidth(){
-        return  0;
-    }
-
-    public double getHeight(){
+    public double getWidth() {
         return 0;
     }
 
-    public DrawingItem(Color color) {
-        this.color = color;
+    public double getHeight() {
+        return 0;
     }
 
     @Override

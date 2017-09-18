@@ -11,6 +11,14 @@ public class Image extends DrawingItem {
     private double height;
 
 
+    public Image(Color color, File file, Point anchor, double width, double height) {
+        super(color);
+        this.file = file;
+        this.anchor = anchor;
+        this.width = width;
+        this.height = height;
+    }
+
     public File getFile() {
         return file;
     }
@@ -43,14 +51,6 @@ public class Image extends DrawingItem {
     }
 
     public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public Image(Color color, File file, Point anchor, double width, double height) {
-        super(color);
-        this.file = file;
-        this.anchor = anchor;
-        this.width = width;
         this.height = height;
     }
 

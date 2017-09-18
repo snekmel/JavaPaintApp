@@ -10,6 +10,14 @@ public class Oval extends DrawingItem {
     private double weight;
 
 
+    public Oval(Color color, Point anchor, double width, double height, double weight) {
+        super(color);
+        this.anchor = anchor;
+        this.width = width;
+        this.height = height;
+        this.weight = weight;
+    }
+
     public Point getAnchor() {
         return anchor;
     }
@@ -39,14 +47,6 @@ public class Oval extends DrawingItem {
     }
 
     public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public Oval(Color color, Point anchor, double width, double height, double weight) {
-        super(color);
-        this.anchor = anchor;
-        this.width = width;
-        this.height = height;
         this.weight = weight;
     }
 
