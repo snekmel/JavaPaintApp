@@ -1,9 +1,10 @@
 package classes;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Polygon extends DrawingItem {
+public class Polygon extends DrawingItem implements Serializable {
 
     private ArrayList<Point> vertices;
 

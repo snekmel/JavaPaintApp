@@ -1,10 +1,14 @@
 package classes;
 
-public class Point {
+import java.io.Serializable;
+
+public class Point implements Serializable {
 
     private double x;
     private double y;
 
+    public Point() {
+    }
 
     public Point(double x, double y) {
         this.x = x;

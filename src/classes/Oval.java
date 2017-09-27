@@ -1,13 +1,19 @@
 package classes;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class Oval extends DrawingItem {
+public class Oval extends DrawingItem implements Serializable {
 
     private Point anchor;
     private double width;
     private double height;
     private double weight;
+
+
+    public Oval() {
+
+    }
 
 
     public Oval(Color color, Point anchor, double width, double height, double weight) {
@@ -49,6 +55,7 @@ public class Oval extends DrawingItem {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
 
     @Override
     public String toString() {

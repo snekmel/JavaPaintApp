@@ -13,6 +13,9 @@ public abstract class DrawingItem {
         this.color = color;
     }
 
+    public DrawingItem() {
+    }
+
     public Color getColor() {
         return color;
     }

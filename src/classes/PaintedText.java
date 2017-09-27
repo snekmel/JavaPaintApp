@@ -1,8 +1,9 @@
 package classes;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class PaintedText extends DrawingItem {
+public class PaintedText extends DrawingItem implements Serializable {
 
     private String content;
     private String fontName;
@@ -10,7 +11,9 @@ public class PaintedText extends DrawingItem {
     private double width;
     private double height;
 
+    public PaintedText() {
 
+    }
     public PaintedText(Color color, String content, String fontName, Point anchor, double width, double height) {
         super(color);
         this.content = content;
