@@ -1,7 +1,10 @@
 package classes;
 
 import interfaces.IPaintable;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 
@@ -14,6 +17,10 @@ public class JavaFxPaintable implements IPaintable {
     }
 
     public void Paint(Oval o) {
+
+
+         graphics.setFill(o.getColor());
+
         graphics.fillOval(o.getAnchor().getX(), o.getAnchor().getY(), o.getWidth(), o.getHeight());
     }
 
@@ -31,13 +38,18 @@ public class JavaFxPaintable implements IPaintable {
             yPoints[i] = points.get(i).getY();
 
         }
-
+        graphics.setFill(p.getColor());
         graphics.fillPolygon(xPoints, yPoints, p.getAantalPoints());
 
     }
 
     @Override
     public void Paint(PaintedText t) {
+
+
+        graphics.setFill(t.getColor());
+        javafx.scene.text.Font f = new Font(t.getFontName(),t.getHeight());
+        graphics.setFont(f);
         graphics.fillText(t.getContent(), t.getAnchor().getX(), t.getAnchor().getY());
     }
 

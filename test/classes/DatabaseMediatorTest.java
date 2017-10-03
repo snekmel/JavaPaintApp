@@ -9,16 +9,15 @@ class DatabaseMediatorTest {
     @org.junit.jupiter.api.Test
     void LoadPaintedText() {
         DatabaseMediator dm = new DatabaseMediator();
-       ArrayList<PaintedText> lijst = dm.loadTextById(12);
-        System.out.println(lijst.size());
+
     }
 
 
     @org.junit.jupiter.api.Test
     void LoadDrawings() {
         DatabaseMediator dm = new DatabaseMediator();
-        ArrayList<Drawing> lijst = dm.loadAll();
-
+       ArrayList<Drawing> d = dm.loadAll();
+        System.out.println(d.get(0).getName() + d.get(1).getName());
     }
 
 

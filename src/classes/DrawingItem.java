@@ -1,7 +1,7 @@
 package classes;
 
 import java.awt.*;
-
+import javafx.scene.paint.Color;
 public abstract class DrawingItem {
 
     private Color color;

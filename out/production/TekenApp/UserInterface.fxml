@@ -8,8 +8,6 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -33,7 +31,8 @@
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="90.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="187.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="233.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="278.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="113.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -51,16 +50,36 @@
                   <Font name="Calibri" size="30.0" />
                </font>
             </Label>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="2" GridPane.rowSpan="3">
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowSpan="3">
               <tabs>
                   <Tab text="Items">
                      <content>
-                        <TableView prefHeight="200.0" prefWidth="200.0">
-                          <columns>
-                            <TableColumn prefWidth="73.0" text="Type" />
-                            <TableColumn prefWidth="189.0" text="Point" />
-                          </columns>
-                        </TableView>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Item count:" GridPane.halignment="RIGHT">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="drawingItemsCb" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="deleteItemBtn" mnemonicParsing="false" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Selected Item:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="itemsCountLbl" text="0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
                      </content>
                   </Tab>
                 <Tab text="Export">
@@ -164,10 +183,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Spinner fx:id="PTWidth" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" />
-                        <Spinner fx:id="PTHeight" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                        <Label prefHeight="17.0" prefWidth="42.0" text="Width" />
-                        <Label prefHeight="17.0" prefWidth="44.0" text="Height" GridPane.rowIndex="1" />
+                        <Spinner fx:id="PTHeight" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" />
+                        <Label prefHeight="17.0" prefWidth="44.0" text="Height" />
                         <Label text="Color" GridPane.columnIndex="1" />
                         <Label prefHeight="17.0" prefWidth="54.0" text="Content" GridPane.rowIndex="2">
                            <padding>
@@ -180,8 +197,8 @@
                               <Insets left="60.0" />
                            </GridPane.margin>
                         </TextField>
-                        <Label text="Font" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="PTFont" prefHeight="25.0" prefWidth="96.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                        <Label text="Font" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <TextField fx:id="PTFont" prefHeight="25.0" prefWidth="108.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="40.0" />
                            </GridPane.margin>
@@ -203,12 +220,10 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         </rowConstraints>
                         <children>
-                            <Spinner fx:id="PolygonWeight" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" />
-                            <Spinner fx:id="PolygonPoints" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                            <Label prefHeight="17.0" prefWidth="42.0" text="Weight" />
-                            <Label prefHeight="17.0" prefWidth="44.0" text="Points" GridPane.rowIndex="1" />
-                            <Label text="Color" GridPane.columnIndex="1" />
-                            <ComboBox fx:id="PolygonColor" prefHeight="25.0" prefWidth="127.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                            <Spinner fx:id="PolygonPoints" editable="true" prefHeight="25.0" prefWidth="78.0" GridPane.halignment="RIGHT" />
+                            <Label prefHeight="17.0" prefWidth="44.0" text="Points" />
+                            <Label text="Color" GridPane.rowIndex="1" />
+                            <ComboBox fx:id="PolygonColor" prefHeight="25.0" prefWidth="127.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                         </children>
                     </GridPane>
                 </content>

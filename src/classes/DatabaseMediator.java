@@ -3,8 +3,7 @@ package classes;
 import interfaces.PersistencyMediator;
 
 import java.awt.*;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -14,11 +13,11 @@ public class DatabaseMediator implements PersistencyMediator {
     Connection con;
 
     public DatabaseMediator() {
-        this.initConnection();
+
         try{
             FileInputStream input = new FileInputStream("src/app.prop");
             prop.load(input);
-            System.out.println(prop);
+            this.initConnection();
         }catch(Exception e){
             System.out.println(e);
         }
@@ -33,151 +32,89 @@ public class DatabaseMediator implements PersistencyMediator {
     }
 
     void initConnection() {
-        String connectionUrl = prop.getProperty("connectionUrl");
+
        try{
-           this.con = DriverManager.getConnection(connectionUrl);
+           Class.forName("com.mysql.jdbc.Driver");
+           String connectionUrl = prop.getProperty("connection");
+           this.con = DriverManager.getConnection(connectionUrl,prop.getProperty("user"),prop.getProperty("password"));
        }catch(Exception e){
            System.out.println(e);
        }
     }
     @Override
-    public Drawing load(String nameDrawing)
+    public Drawing load(String id)
     {
+        Drawing returnDrawing = null;
 
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT object FROM drawings WHERE id = " + id + ";");
+            while (rs.next()) {
+                byte[] st = (byte[]) rs.getObject(1);
+                ByteArrayInputStream baip = new ByteArrayInputStream(st);
+                ObjectInputStream ois = new ObjectInputStream(baip);
 
-        return null;
+                returnDrawing =  (Drawing) ois.readObject();
+            }
+            stmt.close();
+            rs.close();
+            this.closeConnection();
+
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        }
+
+        return returnDrawing;
     }
 
     @Override
     public ArrayList<Drawing> loadAll() {
-        ArrayList<Drawing> returnList = new ArrayList<>();
-        try {
-            Class.forName(prop.getProperty("dbDriver"));
-            this.initConnection();
-            PreparedStatement stmt1 =con.prepareStatement("Select * From Drawing");
-            ResultSet rs = stmt1.executeQuery();
-            while (rs.next()) {
-                Drawing d = new Drawing(rs.getString("Name"));
-                d.setId(rs.getInt("Id"));
-                for (Oval o: loadOvalById(d.getId())
-                     ) {
-                    d.AddDrawingItem(o);
-                }
-                for (PaintedText pt: loadTextById(d.getId())){
-                    d.AddDrawingItem(pt);
-                }
 
-                returnList.add(d);
+        ArrayList<Drawing> returnList = new ArrayList<>();
+
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT object FROM drawings;");
+            while (rs.next()) {
+                byte[] st = (byte[]) rs.getObject(1);
+                ByteArrayInputStream baip = new ByteArrayInputStream(st);
+                ObjectInputStream ois = new ObjectInputStream(baip);
+
+               returnList.add((Drawing) ois.readObject());
             }
-        }catch (Exception e){
-            System.out.println(e);
+            stmt.close();
+            rs.close();
+            this.closeConnection();
+
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
         }
         return returnList;
     }
 
     @Override
     public boolean save(Drawing drawing) {
-        try {
-            Class.forName(prop.getProperty("dbDriver"));
-            this.initConnection();
-            int drawingDbId = 0;
 
-            PreparedStatement stmt1 =con.prepareStatement("INSERT INTO Drawing (Name) VALUES (?);SELECT SCOPE_IDENTITY() AS [Result];");
-            stmt1.setString(1, drawing.getName());
-            ResultSet rs = stmt1.executeQuery();
-            while (rs.next()) {
+         try {
+             ByteArrayOutputStream baos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(baos);
+             oos.writeObject(drawing);
+             byte[] drawingToBytes = baos.toByteArray();
+             PreparedStatement pstmt = con.prepareStatement("INSERT INTO drawings (object) VALUES(?)");
+             ByteArrayInputStream bais = new ByteArrayInputStream(drawingToBytes);
+             pstmt.setBinaryStream(1, bais, drawingToBytes.length);
+             pstmt.executeUpdate();
+             pstmt.close();
+         } catch (Exception ex) {
+             System.out.println(ex.toString());
+         }
 
-                drawingDbId = rs.getInt("Result");
-            }
-
-            for (DrawingItem d: drawing.getItems()
-                    ) {
-
-                if (d instanceof Oval){
-                    Oval o = (Oval)d;
-                 PreparedStatement stmt =con.prepareStatement("INSERT INTO Oval (X ,Y ,Width ,Height ,Weight,DrawingId) VALUES ( ?,?,?,?,?,?)");
-                    stmt.setDouble(1, o.getAnchor().getX());
-                    stmt.setDouble(2, o.getAnchor().getY());
-                    stmt.setDouble(3, o.getWidth());
-                    stmt.setDouble(4, o.getHeight());
-                    stmt.setDouble(5, o.getWeight());
-                    stmt.setInt(6, drawingDbId);
-                    stmt.executeUpdate();
-
-                }
-
-                if (d instanceof PaintedText){
-                    PaintedText pt = (PaintedText) d;
-                    PreparedStatement stmt =con.prepareStatement("INSERT INTO Text (Text ,FontName ,X ,Y ,Width ,Height,DrawingId) VALUES (?,?,?,?,?,?,?)");
-                    stmt.setString(1, pt.getContent());
-                    stmt.setString(2, pt.getFontName());
-                    stmt.setDouble(3, pt.getAnchor().getX());
-                    stmt.setDouble(4, pt.getAnchor().getY());
-                    stmt.setDouble(5, pt.getWidth());
-                    stmt.setDouble(6, pt.getHeight());
-                    stmt.setInt(7, drawingDbId);
-                    stmt.executeUpdate();
-                }
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.exit(0);
-        }
-        this.closeConnection();
 
     return true;
 
 }
 
-public ArrayList<PaintedText> loadTextById(int id){
 
-    ArrayList<PaintedText> returnLijst = new ArrayList<>();
-
-    try{
-        Class.forName(prop.getProperty("dbDriver"));
-        this.initConnection();
-
-        PreparedStatement stmt1 =con.prepareStatement("Select * From Text where DrawingId = ?");
-        stmt1.setInt(1, id);
-        ResultSet rs = stmt1.executeQuery();
-        while (rs.next()) {
-           Point p = new Point(rs.getDouble("X"),rs.getDouble("Y"));
-           PaintedText pt = new PaintedText(Color.BLACK,rs.getString("Text"),rs.getString("FontName"),p,rs.getDouble("Width"),rs.getDouble("Height"));
-           returnLijst.add(pt);
-
-        }
-
-        closeConnection();
-    }catch(Exception e){
-        System.out.println(e);
-    }
-
-    return returnLijst;
-}
-
-public ArrayList<Oval> loadOvalById(int id){
-        ArrayList<Oval> returnLijst = new ArrayList<>();
- try{
-     Class.forName(prop.getProperty("dbDriver"));
-     this.initConnection();
-     PreparedStatement stmt1 =con.prepareStatement("Select * From Oval where DrawingId = ?");
-     stmt1.setInt(1, id);
-     ResultSet rs = stmt1.executeQuery();
-     while (rs.next()) {
-         Point p = new Point(rs.getDouble("X"),rs.getDouble("Y"));
-         Oval newOval = new Oval(Color.BLACK,p,rs.getDouble("Width"),rs.getDouble("Height"),rs.getDouble("Weight"));
-         returnLijst.add(newOval);
-
-     }
-
-closeConnection();
- }catch(Exception e){
-     System.out.println(e);
- }
- return  returnLijst;
-
-}
     @Override
     public boolean init(Properties props) {
         return false;

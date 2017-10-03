@@ -3,7 +3,7 @@ package classes;
 import java.awt.*;
 import java.io.File;
 import java.io.Serializable;
-
+import javafx.scene.paint.Color;
 public class Image extends DrawingItem implements Serializable {
 
     private File file;

@@ -3,6 +3,7 @@ package classes;
 import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javafx.scene.paint.Color;
 
 public class Polygon extends DrawingItem implements Serializable {
 

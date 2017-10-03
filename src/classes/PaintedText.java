@@ -2,7 +2,7 @@ package classes;
 
 import java.awt.*;
 import java.io.Serializable;
-
+import javafx.scene.paint.Color;
 public class PaintedText extends DrawingItem implements Serializable {
 
     private String content;

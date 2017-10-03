@@ -15,7 +15,7 @@ public class SerializationMediator implements PersistencyMediator {
         try{
             FileInputStream input = new FileInputStream("src/app.prop");
             props.load(input);
-            System.out.println(props);
+
         }catch(Exception e){
             System.out.println(e);
         }
@@ -23,9 +23,9 @@ public class SerializationMediator implements PersistencyMediator {
 
     @Override
     public Drawing load(String nameDrawing) {
-        Drawing returnDrawing = null;
-        try{
-            FileInputStream fileIn = new FileInputStream(props.getProperty("exportLocation")+ nameDrawing);
+       Drawing returnDrawing = null;
+       try{
+            FileInputStream fileIn = new FileInputStream(props.getProperty("exportLocation")+ nameDrawing + ".ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             returnDrawing = (Drawing) in.readObject();
             in.close();
@@ -33,18 +33,31 @@ public class SerializationMediator implements PersistencyMediator {
         }catch(Exception e){
             System.out.println(e);
         }
+
         return returnDrawing;
     }
 
     @Override
     public ArrayList<Drawing> loadAll() {
         ArrayList<Drawing> returnList = new ArrayList<>();
+
         File folder = new File(props.getProperty("exportLocation"));
         File[] listOfFiles = folder.listFiles();
         for (File file : listOfFiles) {
             if (file.isFile()) {
-                Drawing d = this.load(file.getName());
-                returnList.add(d);
+
+
+                try{
+                    FileInputStream fileIn = new FileInputStream(file);
+                    ObjectInputStream in = new ObjectInputStream(fileIn);
+                    returnList.add( (Drawing) in.readObject());
+                    in.close();
+                    fileIn.close();
+
+                }catch(Exception e){
+
+                }
+
             }
         }
         return returnList;
@@ -52,6 +65,7 @@ public class SerializationMediator implements PersistencyMediator {
 
     @Override
     public boolean save(Drawing drawing) {
+
         try{
             String outputLocation = props.getProperty("exportLocation")+ drawing.getName() + ".ser";
             FileOutputStream fileOut = new FileOutputStream(outputLocation);

@@ -1,8 +1,10 @@
 package classes;
 
+import enums.Color;
 import interfaces.PersistencyMediator;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +24,7 @@ import java.util.ResourceBundle;
 import static java.awt.Color.BLACK;
 
 public class DrawingTool extends Application implements Initializable {
-    @FXML
-    private Spinner<Double> PTWidth;
+
 
     @FXML
     private Spinner<Double> PTHeight;
@@ -67,8 +68,6 @@ public class DrawingTool extends Application implements Initializable {
     @FXML
     private Button ImageUploadBtn;
 
-    @FXML
-    private Spinner<Double> PolygonWeight;
 
     @FXML
     private Spinner<Integer> PolygonPoints;
@@ -95,7 +94,10 @@ public class DrawingTool extends Application implements Initializable {
     private Button loadDrawingExportsBtn;
 
     @FXML
-    private TableView<DrawingItem> ItemsTableView;
+    private Label itemsCountLbl;
+
+    @FXML
+    private Button deleteItemBtn;
 
     private JavaFxPaintable paintable;
 
@@ -106,6 +108,9 @@ public class DrawingTool extends Application implements Initializable {
     private Polygon polygon;
 
     private PersistencyMediator pm;
+
+    @FXML
+    private ComboBox<DrawingItem> drawingItemsCb;
 
     @Override
     //(Main)
@@ -125,49 +130,46 @@ public class DrawingTool extends Application implements Initializable {
         //Initialize fxml components
         this.paintable = new JavaFxPaintable(this.drawingCanvas.getGraphicsContext2D());
         this.drawing = new Drawing("");
-
         this.OvalWidth.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
         this.OvalHeight.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
         this.OvalWeight.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
-
         this.PTHeight.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
-        this.PTWidth.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
-
         this.ImageHeight.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
         this.ImageWidth.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
-
         this.PolygonPoints.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 0));
-        this.PolygonWeight.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 0));
-
 
         //Load data
-        for (Drawing d: new DatabaseMediator().loadAll()
-             ) {
-            AllDrawingsCb.getItems().add(d);
-        }
 
-        for (Drawing d: new SerializationMediator().loadAll()
-                ) {
-            AllDrawingsExports.getItems().add(d);
-        }
+        FillComboBoxes();
 
         for (enums.Color c : enums.Color.values()) {
             this.OvalColor.getItems().addAll(c);
+            this.PTColor.getItems().addAll(c);
+            this.PolygonColor.getItems().addAll(c);
         }
 
 
-        //Event handlers
 
+        //Event handlers
         ImageUploadBtn.setOnAction(event -> {
                     FileChooser fileChooser = new FileChooser();
                     this.uploadeImage = fileChooser.showOpenDialog(new Stage());
                 }
         );
 
+        this.deleteItemBtn.setOnAction(event ->{
+            this.drawing.RemoveItem(drawingItemsCb.getSelectionModel().getSelectedItem());
+
+                Draw();
+
+        });
+
         this.SaveDrawingBtn.setOnAction(event -> {
             this.pm = new DatabaseMediator();
             this.drawing.setName(DrawingNameTb.getText());
             this.pm.save(this.drawing);
+            this.drawing = new Drawing("");
+            this.Draw();
         });
 
         this.SaveXmlBtn.setOnAction(event -> {
@@ -175,50 +177,54 @@ public class DrawingTool extends Application implements Initializable {
             this.drawing.setName(DrawingNameTb.getText());
             this.pm.save(this.drawing);
             this.initialize(location, resources);
+            this.drawing = new Drawing("");
+            this.Draw();
 
         });
 
         this.loadDrawingBtn.setOnAction(event -> {
            Drawing d = AllDrawingsCb.getSelectionModel().getSelectedItem();
            this.drawing.AddDrawingItem(d);
-            System.out.println(d);
             Draw();
+            FillComboBoxes();
         });
-
 
         this.loadDrawingExportsBtn.setOnAction(event ->{
             Drawing d = AllDrawingsExports.getSelectionModel().getSelectedItem();
             this.drawing.AddDrawingItem(d);
-            System.out.println(d);
             Draw();
+            FillComboBoxes();
         });
 
 
+        this.drawingItemsCb.setItems(this.drawing.itemsToObserve());
 
         drawingCanvas.setOnMouseClicked(new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
             @Override
             public void handle(javafx.scene.input.MouseEvent event) {
 
+
                 int Index = DrawingTypeTabPane.getSelectionModel().getSelectedIndex();
                 Point p = new Point(event.getX(), event.getY());
+
 
                 switch (Index) {
                     //Oval
                     case 0:
-                        Oval o = new Oval(BLACK, p, OvalWidth.getValue(), OvalHeight.getValue(), OvalWeight.getValue());
+                        Oval o = new Oval(ColorRepo.ConvertEnumToColor(OvalColor.getValue()), p, OvalWidth.getValue(), OvalHeight.getValue(), OvalWeight.getValue());
                         drawing.AddDrawingItem(o);
                         break;
                     //Text
                     case 1:
-                        PaintedText pt = new PaintedText(BLACK, PTContent.getText(), PTFont.getText(), p, PTWidth.getValue(), PTHeight.getValue());
-                        System.out.println(pt);
+                        PaintedText pt = new PaintedText(ColorRepo.ConvertEnumToColor(PTColor.getValue()), PTContent.getText(), PTFont.getText(), p, 0, PTHeight.getValue());
+
                         drawing.AddDrawingItem(pt);
                         break;
                     //Polygon
                     case 2:
                         //Wanneer er nog geen polygon is maak er een aan
                         if (polygon == null) {
-                            polygon = new Polygon(BLACK, PolygonWeight.getValue(), PolygonPoints.getValue());
+                            polygon = new Polygon(ColorRepo.ConvertEnumToColor(PolygonColor.getValue()), 0, PolygonPoints.getValue());
                             polygon.addVertices(p);
                         } else {
                             //Voeg point to aan bestaande polygon
@@ -235,11 +241,11 @@ public class DrawingTool extends Application implements Initializable {
                         break;
                     //Image
                     case 3:
-                        Image img = new Image(BLACK, uploadeImage, p, ImageWidth.getValue(), ImageHeight.getValue());
+                        Image img = new Image(javafx.scene.paint.Color.WHITE, uploadeImage, p, ImageWidth.getValue(), ImageHeight.getValue());
                         drawing.AddDrawingItem(img);
-
                         break;
                 }
+
                 Draw();
             }
         });
@@ -249,7 +255,7 @@ public class DrawingTool extends Application implements Initializable {
     public void Draw() {
 
         this.drawingCanvas.getGraphicsContext2D().clearRect(0, 0, drawingCanvas.getWidth(), drawingCanvas.getHeight());
-
+        itemsCountLbl.setText(drawing.getItems().size() + "");
         for (int i = 0; i < drawing.getItems().size(); i++) {
 
             if (drawing.getItems().get(i) instanceof Oval) {
@@ -283,9 +289,20 @@ public class DrawingTool extends Application implements Initializable {
     }
 
 
-    ObservableList<DrawingItem> getObservableList(){
-        return FXCollections.observableList(this.drawing.getItems());
+    private void FillComboBoxes(){
+        this.AllDrawingsCb.getItems().clear();
+        this.AllDrawingsExports.getItems().clear();
+
+        for (Drawing d: new DatabaseMediator().loadAll()
+                ) {
+            AllDrawingsCb.getItems().add(d);
+        }
+        for (Drawing d: new SerializationMediator().loadAll()
+                ) {
+            AllDrawingsExports.getItems().add(d);
+        }
     }
+
 
 
 }

@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_6_2_1_jre8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TODO" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_copy.prop" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/classes/SerializationMediator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/interfaces/PersistencyMediator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/classes/DatabaseMediatorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/classes/ColorRepo.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TODO" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TekenApp/UserInterface_copy.fxml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/DatabaseMediator.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/DatabaseMediator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/Drawing.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/Drawing.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/DrawingItem.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/DrawingItem.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/DrawingTool$1.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/DrawingTool$1.class" />
@@ -16,20 +14,27 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/JavaFxPaintable.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/JavaFxPaintable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/Oval.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/Oval.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/PaintedText.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/PaintedText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/Point.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/Point.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/Polygon.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/Polygon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/classes/SerializationMediator.class" afterPath="$PROJECT_DIR$/out/production/TekenApp/classes/SerializationMediator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/TekenApp/classes/DatabaseMediatorTest.class" afterPath="$PROJECT_DIR$/out/test/TekenApp/classes/DatabaseMediatorTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/TekenApp/classes/SerializationMediatorTest.class" afterPath="$PROJECT_DIR$/out/test/TekenApp/classes/SerializationMediatorTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_6_2_1_jre8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_6_2_1_jre8.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TekenApp.iml" afterPath="$PROJECT_DIR$/TekenApp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TekenApp/UserInterface.fxml" afterPath="$PROJECT_DIR$/out/production/TekenApp/UserInterface.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserInterface.fxml" afterPath="$PROJECT_DIR$/src/UserInterface.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app_copy.prop" afterPath="$PROJECT_DIR$/src/app_copy.prop" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/DatabaseMediator.java" afterPath="$PROJECT_DIR$/src/classes/DatabaseMediator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/Drawing.java" afterPath="$PROJECT_DIR$/src/classes/Drawing.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/DrawingItem.java" afterPath="$PROJECT_DIR$/src/classes/DrawingItem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/DrawingTool.java" afterPath="$PROJECT_DIR$/src/classes/DrawingTool.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/Image.java" afterPath="$PROJECT_DIR$/src/classes/Image.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/JavaFxPaintable.java" afterPath="$PROJECT_DIR$/src/classes/JavaFxPaintable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/Oval.java" afterPath="$PROJECT_DIR$/src/classes/Oval.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/PaintedText.java" afterPath="$PROJECT_DIR$/src/classes/PaintedText.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/Point.java" afterPath="$PROJECT_DIR$/src/classes/Point.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/Polygon.java" afterPath="$PROJECT_DIR$/src/classes/Polygon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classes/SerializationMediator.java" afterPath="$PROJECT_DIR$/src/classes/SerializationMediator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/classes/DatabaseMediatorTest.java" afterPath="$PROJECT_DIR$/test/classes/DatabaseMediatorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/classes/SerializationMediatorTest.java" afterPath="$PROJECT_DIR$/test/classes/SerializationMediatorTest.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,57 +97,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DatabaseMediator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/DatabaseMediator.java">
+      <file leaf-file-name="SerializationMediator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/classes/SerializationMediator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1071">
-              <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1506500229845" expanded="true" signature="1419:1440" ph="Select * Fro... Drawing" />
-                <marker date="1506500229845" expanded="true" signature="2305:2342" ph="INSERT INTO Drawing... " />
-                <marker date="1506500229845" expanded="true" signature="2343:2378" ph="SELECT SCOPE... " />
-                <marker date="1506500229845" expanded="true" signature="2799:2877" ph="INSERT INTO Oval... " />
-                <marker date="1506500229845" expanded="true" signature="3442:3529" ph="INSERT INTO Text... " />
-                <marker date="1506500229845" expanded="true" signature="4438:4476" ph="Select * Fro... Text" />
-                <marker date="1506500229845" expanded="true" signature="5201:5238" ph="Select * Fro... Oval" />
-                <marker date="1506500229845" expanded="true" signature="5201:5239" ph="Select * Fro... Oval" />
-              </folding>
+            <state relative-caret-position="-408">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DrawingTool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/DrawingTool.java">
+      <file leaf-file-name="app.prop" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app.prop">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="932">
-              <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-              <folding>
-                <element signature="e#8992#8993#0" expanded="true" />
-                <element signature="e#9068#9069#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17">
-                <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrawingItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/DrawingItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="37" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,51 +120,28 @@
       <file leaf-file-name="Drawing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classes/Drawing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="64" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="64" />
-              <folding>
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#814#815#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Oval.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/Oval.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/Image.java">
+      <file leaf-file-name="SerializationMediatorTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/classes/SerializationMediatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="62" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+            <state relative-caret-position="153">
+              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaintedText.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/classes/PaintedText.java">
+      <file leaf-file-name="DrawingTool.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/classes/DrawingTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TODO" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TODO">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="159">
+              <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -209,9 +155,9 @@
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Arquillian JUnit Test Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -220,6 +166,16 @@
       <find>drawingcan</find>
       <find>canvas</find>
       <find>Properties p=new Properties();</find>
+      <find>ystem</find>
+      <find>PolygonWei</find>
+      <find>system</find>
+      <find>color</find>
+      <find>ItemsTable</find>
+      <find>items</find>
+      <find>drawingItemsCb</find>
+      <find>delete</find>
+      <find>cb</find>
+      <find>alldrawings</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -250,29 +206,30 @@
         <option value="$PROJECT_DIR$/src/UIController.java" />
         <option value="$PROJECT_DIR$/src/enums/Types.java" />
         <option value="$PROJECT_DIR$/src/UserInterface.fxml" />
-        <option value="$PROJECT_DIR$/src/classes/JavaFxPaintable.java" />
         <option value="$PROJECT_DIR$/src/interfaces/SerializationMediator.java" />
         <option value="$PROJECT_DIR$/src/interfaces/DatabaseMediator.java" />
         <option value="$PROJECT_DIR$/src/classes/Point.java" />
         <option value="$PROJECT_DIR$/exports/DrawingNameasdf" />
-        <option value="$PROJECT_DIR$/src/classes/DrawingItem.java" />
-        <option value="$PROJECT_DIR$/src/classes/Oval.java" />
-        <option value="$PROJECT_DIR$/src/classes/PaintedText.java" />
         <option value="$PROJECT_DIR$/src/db.prop" />
         <option value="$PROJECT_DIR$/src/interfaces/PersistencyMediator.java" />
-        <option value="$PROJECT_DIR$/test/classes/DatabaseMediatorTest.java" />
-        <option value="$PROJECT_DIR$/src/classes/Drawing.java" />
         <option value="$PROJECT_DIR$/src/enums/Color.java" />
-        <option value="$PROJECT_DIR$/test/classes/SerializationMediatorTest.java" />
-        <option value="$PROJECT_DIR$/src/classes/SerializationMediator.java" />
-        <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/src/app.prop" />
-        <option value="$PROJECT_DIR$/src/classes/DatabaseMediator.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/classes/DrawingItem.java" />
         <option value="$PROJECT_DIR$/src/classes/Polygon.java" />
         <option value="$PROJECT_DIR$/src/classes/Image.java" />
-        <option value="$PROJECT_DIR$/src/classes/DrawingTool.java" />
+        <option value="$PROJECT_DIR$/src/classes/PaintedText.java" />
+        <option value="$PROJECT_DIR$/src/classes/ColorRepo.java" />
+        <option value="$PROJECT_DIR$/src/classes/JavaFxPaintable.java" />
+        <option value="$PROJECT_DIR$/src/app.prop" />
+        <option value="$PROJECT_DIR$/test/classes/DatabaseMediatorTest.java" />
+        <option value="$PROJECT_DIR$/src/classes/DatabaseMediator.java" />
+        <option value="$PROJECT_DIR$/src/classes/Oval.java" />
+        <option value="$PROJECT_DIR$/src/classes/Drawing.java" />
+        <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/test/classes/SerializationMediatorTest.java" />
+        <option value="$PROJECT_DIR$/src/classes/SerializationMediator.java" />
         <option value="$PROJECT_DIR$/src/app_copy.prop" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/classes/DrawingTool.java" />
       </list>
     </option>
   </component>
@@ -284,10 +241,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="907" />
-    <option name="y" value="17" />
-    <option name="width" value="974" />
-    <option name="height" value="1017" />
+    <option name="x" value="494" />
+    <option name="y" value="54" />
+    <option name="width" value="1097" />
+    <option name="height" value="1078" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -308,6 +265,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="Scratches" />
@@ -325,13 +283,29 @@
             </path>
             <path>
               <item name="TekenApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TekenApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TekenApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TekenApp" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TekenApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TekenApp" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TekenApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,7 +320,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Mysql/mysql-connector-java-5.1.44-bin (1).jar!/" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -667,7 +641,11 @@
       <workItem from="1505920788203" duration="5826000" />
       <workItem from="1506322418297" duration="9418000" />
       <workItem from="1506407597710" duration="8413000" />
-      <workItem from="1506495581999" duration="5315000" />
+      <workItem from="1506495581999" duration="6938000" />
+      <workItem from="1506810426676" duration="17730000" />
+      <workItem from="1507013613578" duration="1241000" />
+      <workItem from="1507015807336" duration="62000" />
+      <workItem from="1507029727435" duration="12043000" />
     </task>
     <task id="LOCAL-00001" summary="Oval en tekst werkt">
       <created>1505227993540</created>
@@ -680,65 +658,64 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SerializationMediatorTest_load - 2017.09.27 at 09h 11m 09s.xml">
+    <history-entry file="SerializationMediatorTest_load - 2017.10.03 at 17h 45m 00s.xml">
       <configuration name="SerializationMediatorTest.load" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerializationMediatorTest_load - 2017.09.27 at 09h 11m 50s.xml">
+    <history-entry file="SerializationMediatorTest_load - 2017.10.03 at 17h 45m 14s.xml">
       <configuration name="SerializationMediatorTest.load" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerializationMediatorTest_load - 2017.09.27 at 09h 12m 14s.xml">
+    <history-entry file="SerializationMediatorTest_load - 2017.10.03 at 17h 45m 40s.xml">
       <configuration name="SerializationMediatorTest.load" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerializationMediatorTest_load - 2017.09.27 at 09h 14m 01s.xml">
+    <history-entry file="SerializationMediatorTest_load - 2017.10.03 at 17h 46m 05s.xml">
       <configuration name="SerializationMediatorTest.load" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerializationMediatorTest_load - 2017.09.27 at 09h 14m 22s.xml">
-      <configuration name="SerializationMediatorTest.load" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerializationMediatorTest_load - 2017.09.27 at 09h 14m 31s.xml">
-      <configuration name="SerializationMediatorTest.load" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerializationMediatorTest_load - 2017.09.27 at 09h 22m 21s.xml">
-      <configuration name="SerializationMediatorTest.load" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SerializationMediatorTest_loadAll - 2017.09.27 at 09h 23m 03s.xml">
+    <history-entry file="SerializationMediatorTest_loadAll - 2017.10.03 at 17h 44m 02s.xml">
       <configuration name="SerializationMediatorTest.loadAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerializationMediatorTest_loadAll - 2017.09.27 at 09h 23m 19s.xml">
+    <history-entry file="SerializationMediatorTest_loadAll - 2017.10.03 at 17h 47m 26s.xml">
       <configuration name="SerializationMediatorTest.loadAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SerializationMediatorTest_loadAll - 2017.09.27 at 09h 23m 22s.xml">
+    <history-entry file="SerializationMediatorTest_loadAll - 2017.10.03 at 17h 49m 17s.xml">
+      <configuration name="SerializationMediatorTest.loadAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerializationMediatorTest_loadAll - 2017.10.03 at 17h 49m 39s.xml">
+      <configuration name="SerializationMediatorTest.loadAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerializationMediatorTest_loadAll - 2017.10.03 at 17h 49m 53s.xml">
+      <configuration name="SerializationMediatorTest.loadAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerializationMediatorTest_loadAll - 2017.10.03 at 17h 50m 07s.xml">
       <configuration name="SerializationMediatorTest.loadAll" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104746000" />
+    <option name="totallyTimeSpent" value="137445000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="907" y="17" width="974" height="1017" extended-state="0" />
-    <editor active="true" />
+    <frame x="494" y="54" width="1097" height="1078" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32343584" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32201535" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32642487" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34181416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25678498" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2599445" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39554614" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -812,39 +789,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/classes/Drawing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/PaintedText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
@@ -869,21 +813,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/JavaFxPaintable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserInterface.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="177" column="34" lean-forward="false" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exports/TestHallo.xml" />
@@ -892,210 +829,16 @@
     <entry file="file://$PROJECT_DIR$/exports/DrawingNameasdf" />
     <entry file="file://$PROJECT_DIR$/exports/DrawingNamefasdf.xml" />
     <entry file="file://$PROJECT_DIR$/exports/DrawingNameqwer.xml" />
-    <entry file="file://$PROJECT_DIR$/exports/DrawingNameasdfsadf.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exports/DrawingNamekkk.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exports/TestOvalPaintedTxt.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TekenApp.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="58" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserInterface_copy.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/exports/DrawingNameasdfsadf.xml" />
+    <entry file="file://$PROJECT_DIR$/exports/DrawingNamekkk.xml" />
+    <entry file="file://$PROJECT_DIR$/exports/TestOvalPaintedTxt.xml" />
+    <entry file="file://$PROJECT_DIR$/src/UserInterface_copy.fxml" />
     <entry file="file://$PROJECT_DIR$/test/DBTests.java" />
-    <entry file="file://$PROJECT_DIR$/test/classes/DatabaseMediatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exports/dFSDF.ser">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="165" lean-forward="false" selection-start-line="1" selection-start-column="160" selection-end-line="1" selection-end-column="165" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/exports/dFSDF.ser" />
     <entry file="file://$PROJECT_DIR$/src/interfaces/PersistencyMediator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/classes/SerializationMediatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/enums/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/SerializationMediator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Polygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="64" lean-forward="false" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-          <folding>
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Oval.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="62" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/DrawingItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Drawing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="64" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="64" />
-          <folding>
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/DatabaseMediator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1071">
-          <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1506500229845" expanded="true" signature="1419:1440" ph="Select * Fro... Drawing" />
-            <marker date="1506500229845" expanded="true" signature="2305:2342" ph="INSERT INTO Drawing... " />
-            <marker date="1506500229845" expanded="true" signature="2343:2378" ph="SELECT SCOPE... " />
-            <marker date="1506500229845" expanded="true" signature="2799:2877" ph="INSERT INTO Oval... " />
-            <marker date="1506500229845" expanded="true" signature="3442:3529" ph="INSERT INTO Text... " />
-            <marker date="1506500229845" expanded="true" signature="4438:4476" ph="Select * Fro... Text" />
-            <marker date="1506500229845" expanded="true" signature="5201:5238" ph="Select * Fro... Oval" />
-            <marker date="1506500229845" expanded="true" signature="5201:5239" ph="Select * Fro... Oval" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.prop">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/PaintedText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app_copy.prop">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/DrawingTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
-          <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-          <folding>
-            <element signature="e#8992#8993#0" expanded="true" />
-            <element signature="e#9068#9069#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,9 +854,174 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="17">
             <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TekenApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exports/Test1.ser" />
+    <entry file="file://$PROJECT_DIR$/src/classes/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/enums/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/ColorRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/PaintedText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/Polygon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="0" column="16" lean-forward="true" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exports/Test.ser" />
+    <entry file="file://$PROJECT_DIR$/src/classes/JavaFxPaintable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exports/Ovaaltje.ser">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/classes/DatabaseMediatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/Oval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exports/Polygons.ser">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="73" lean-forward="false" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/DrawingItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/DatabaseMediator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1507014098172" expanded="true" signature="1282:1321" ph="SELECT drawi... drawings" />
+            <marker date="1507014098172" expanded="true" signature="2085:2112" ph="SELECT objec... drawings" />
+            <marker date="1507014098172" expanded="true" signature="3000:3039" ph="INSERT INTO drawings... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/classes/SerializationMediatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.prop">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app_copy.prop">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/Drawing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/SerializationMediator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/DrawingTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
